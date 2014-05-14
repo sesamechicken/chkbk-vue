@@ -1,68 +1,98 @@
-<!doctype html>
-<html class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>chkbk Vue</title>
-<meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="bower_components/foundation/css/foundation.min.css">
+<title>chkbk Vue.js</title>
+
+<!--Bootstrap via Bower -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/app.css">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<style type="text/css">
-.debit{
-    color: red;
-}
-.deposit{
-    color: green;
-}
-.deposit-row{
-    background-color: #f1f9f7 !important;
-    border-color: #e0f1e9;
-    color: #1d9d74 !important;
-}
-.debit-row{
-    border-color: #CE9191;
-    color: #C34242;
-}
 
 
-</style>
 </head>
 <body>
+
+ <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">chkbk - vue</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </div>
+
+<div class="container-fluid">
+
+
 <div class="row">
 
-
-<div class="sidebar large-4 columns">
+<div class="col-sm-3 col-md-2 sidebar">
     <div class="header">
-    <hgroup>
-        <h1>chkbk</h1>
-        <h4 class="subheader">Your online checkbook.</h4>
-    </hgroup>
+        <hgroup>
+            <h1>chkbk</h1>
+            <h4 class="subheader">Your online checkbook.</h4>
+        </hgroup>
 
-    <nav class="nav">
-        <a class="tiny button" href="#">Sign up</a>
-    </nav>
+        <nav class="nav">
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+            <button class="btn btn-primary">Sign up</button>
+        </nav>
     </div>
 </div>
 
 
 
-<div class="content large-8 columns" id="chkbk-app">
 
 
+
+<div class="main col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" id="chkbk-app">
 
 <form onsubmit="return false">
-    <button class="pure-button"><i class="fa fa-camera"></i></button>
-    <input type="number" v-model="chkbk_id" placeholder="Check #">
-    <input type="date" v-model="chkbk_date">
-    <input type="text" v-model="chkbk_note" placeholder="Note (Kroger,paycheck, etc)">
-    <label><input type="radio" value="0" v-model="chkbk_type" checked> <i class="fa fa-minus-circle fa-lg debit"></i></label> <label> <input type="radio" value="1" v-model="chkbk_type"> <i class="fa fa-plus-circle fa-lg deposit"></i></label> 
-    <input type="text" placeholder="Amount" v-model="chkbk_amount" class="pure-u-3-24">
-    <button v-on="click: saveEntry" class="pure-button pure-button-primary">Save</button>
+    <button class="btn"><i class="fa fa-camera"></i></button>
+    <input type="number" v-model="chkbk_id" placeholder="Check #" class="form-control">
+    <input type="date" v-model="chkbk_date" class="form-control">
+    <input type="text" v-model="chkbk_note" placeholder="Note (Kroger,paycheck, etc)" class="form-control">
+    <label><input type="radio" value="0" v-model="chkbk_type" class="form-control" checked> <i class="fa fa-minus-circle fa-lg debit"></i></label> <label> <input type="radio" value="1" v-model="chkbk_type" class="form-control"> <i class="fa fa-plus-circle fa-lg deposit"></i></label> 
+    <input type="text" placeholder="Amount" v-model="chkbk_amount" class="form-control">
+    <button v-on="click: saveEntry" class="btn btn-success">Save</button>
 </form>
 
-<table id="chkbk-tbl" class="pure-table pure-table-striped">
+<table id="chkbk-tbl" class="table table-hover table-bordered">
     <thead>
         <tr>
             <th><i class="fa fa-camera"></i></th>
@@ -90,66 +120,16 @@
 
 </div>
 
-
 </div>
+</div>
+<!-- END wrapper -->-
+
+
 <script src="bower_components/vue/dist/vue.js"></script>
-<script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="js/app.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
 
-// Filters 
-Vue.filter('makeFloat', function (value) {
-    return parseFloat(value).toFixed(2);
-});
-
-// Views (vue's)
-var chkbk = new Vue({
-    el: '#chkbk-app',
-    data: {
-        msg: 'Hello, foo',
-        records: [
-            { check_id: 123, image: '', date: '4/20/2014', note: 'Kroger', type: 0, amount: 124.22, balance: 435.87 },
-            { check_id: null, image: '', date: '4/22/2014', note: 'Shell', type: 0, amount: 20.00, balance: 415.87 },
-            { check_id: null, image: '', date: '4/20/2014', note: 'Water bill', type: 0, amount: 32.53, balance: 383.34 },
-            { check_id: null, image: '', date: '4/20/2014', note: 'Deposit', type: 1, amount: 100.00, balance: 483.34 }
-        ]
-    },
-    methods: {
-        saveEntry: function (e) {
-
-            var transaction_type = this.chkbk_type;
-            var ttlEntries = this.records.length - 1;
-            var prevBalance = this.records[ttlEntries].balance;
-
-            if(transaction_type == 1){
-                newBalance = (prevBalance + parseFloat(this.chkbk_amount));
-                // console.log('deposit');
-            }
-            else{
-                // console.log('debit');
-                newBalance = (prevBalance - parseFloat(this.chkbk_amount));
-            }
-
-            this.records.push({
-                check_id: this.chkbk_id, 
-                date: this.chkbk_date,
-                note: this.chkbk_note,
-                type: this.chkbk_type,
-                amount: this.chkbk_amount,
-                balance: parseFloat(newBalance)
-            });
-            console.log('Saved ok!');
-            this.chkbk_amount = "";
-            this.chkbk_date = "";
-            this.chkbk_type = 0;
-            this.chkbk_note = "";
-        }
-    },
-
-    
-});
-
-
-
-</script>
 </body>
 </html>
