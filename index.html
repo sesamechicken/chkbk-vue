@@ -40,7 +40,7 @@
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="#">Logout</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -55,24 +55,24 @@
 <div class="row">
 
 <div class="col-sm-3 col-md-2 sidebar">
-    <div class="header">
-        <hgroup>
-            <h1>chkbk</h1>
-            <h4 class="subheader">Your online checkbook.</h4>
-        </hgroup>
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Categories <span class="badge btn-primary">5</span></h3>
+      </div>
+      <div class="panel-body">
+      <button class="btn btn-primary">Add new category</button>
+      </div>
 
-        <nav class="nav">
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-            <button class="btn btn-primary">Sign up</button>
-        </nav>
-    </div>
+
+    <ul class="list-group">
+        <li class="list-group-item info"><span class="label label-default">Groceries</span></li>
+        <li class="list-group-item"><span class="label label-info">Toys</span></li>
+        <li class="list-group-item"><span class="label label-warning">Fun</span></li>
+        <li class="list-group-item"><span class="label label-danger">Bills</span></li>
+        <li class="list-group-item"><span class="label label-success">Surprises</span></li>
+    </ul>
+
+</div>
 </div>
 
 
@@ -81,6 +81,33 @@
 
 
 <div class="main col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" id="chkbk-app">
+
+
+<!-- Show github-style what percentages of types of transactions -->
+<div class="progress">
+  <div class="progress-bar progress-bar-success" style="width: 15%">
+    <span >Surprises</span>
+  </div>
+  <div class="progress-bar progress-bar-warning" style="width: 5%">
+    <span>Fun</span>
+  </div>
+  <div class="progress-bar progress-bar-danger" style="width: 30%">
+    <span >Bills</span>
+  </div>
+  <div class="progress-bar progress-bar-info" style="width: 5%">
+    <span>Toysand alonger title</span>
+  </div>
+  <div class="progress-bar progress-bar-default" style="width: 45%">
+    <span>Groceries</span>
+  </div>
+</div>
+<!-- END github-style what percentages of types of transactions -->
+
+
+<div class="alert alert-success alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Nice!</strong> You've added a new line to your chkbk.
+</div>
 
 <form onsubmit="return false">
     <button class="btn"><i class="fa fa-camera"></i></button>
@@ -96,7 +123,7 @@
     <thead>
         <tr>
             <th><i class="fa fa-camera"></i></th>
-            <th>Check #</th>
+            <th class="hidden-xs">Check #</th>
             <th>Date</th>
             <th>Note</th>
             <th>Amount</th>
@@ -107,7 +134,7 @@
         
     <tr v-repeat="records" class="{{type == 1 ? 'deposit-row' : 'debit-row'}}">
         <td>{{image ? 'img_link' : 'None'}}</td>
-        <td>{{check_id}}</td>
+        <td class="hidden-xs">{{check_id}}</td>
         <td>{{date}}</td>
         <td>{{note}}</td>
         <td class="right">{{amount | makeFloat}}</td>
