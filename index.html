@@ -25,29 +25,29 @@
 <body>
 
  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">chkbk - vue</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Logout</a></li>
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </div>
+	  <div class="container-fluid">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">chkbk - vue</a>
+		</div>
+		<div class="navbar-collapse collapse">
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Dashboard</a></li>
+			<li><a href="#">Settings</a></li>
+			<li><a href="#">Profile</a></li>
+			<li><a href="#">Logout</a></li>
+		  </ul>
+		  <form class="navbar-form navbar-right">
+			<input type="text" class="form-control" placeholder="Search...">
+		  </form>
+		</div>
+	  </div>
+	</div>
 
 <div class="container-fluid">
 
@@ -55,29 +55,25 @@
 <div class="row">
 
 <div class="col-sm-3 col-md-2 sidebar">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title">Categories <span class="badge btn-primary">5</span></h3>
-      </div>
-      <div class="panel-body">
-      <button class="btn btn-primary">Add new category</button>
-      </div>
+	<div class="panel panel-info">
+	  <div class="panel-heading">
+		<h3 class="panel-title">Categories <span class="badge btn-primary">5</span></h3>
+	  </div>
+	  <div class="panel-body">
+	  <button class="btn btn-primary">Add new category</button>
+	  </div>
 
 
-    <ul class="list-group">
-        <li class="list-group-item info"><span class="label label-default">Groceries</span></li>
-        <li class="list-group-item"><span class="label label-info">Toys</span></li>
-        <li class="list-group-item"><span class="label label-warning">Fun</span></li>
-        <li class="list-group-item"><span class="label label-danger">Bills</span></li>
-        <li class="list-group-item"><span class="label label-success">Surprises</span></li>
-    </ul>
+	<ul class="list-group">
+		<li class="list-group-item info"><span class="label label-default">Groceries</span></li>
+		<li class="list-group-item"><span class="label label-info">Toys</span></li>
+		<li class="list-group-item"><span class="label label-warning">Fun</span></li>
+		<li class="list-group-item"><span class="label label-danger">Bills</span></li>
+		<li class="list-group-item"><span class="label label-success">Surprises</span></li>
+	</ul>
 
 </div>
 </div>
-
-
-
-
 
 
 <div class="main col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2" id="chkbk-app">
@@ -85,21 +81,22 @@
 
 <!-- Show github-style what percentages of types of transactions -->
 <div class="progress">
-  <div class="progress-bar progress-bar-success" style="width: 15%">
-    <span >Surprises</span>
+  <div class="progress-bar progress-bar-success" style="width: 12%">
+		<span >Surprises</span>
   </div>
   <div class="progress-bar progress-bar-warning" style="width: 5%">
-    <span>Fun</span>
+		<span>Fun</span>
   </div>
   <div class="progress-bar progress-bar-danger" style="width: 30%">
-    <span >Bills</span>
+		<span >Bills</span>
   </div>
-  <div class="progress-bar progress-bar-info" style="width: 5%">
-    <span>Toysand alonger title</span>
+  <div class="progress-bar progress-bar-info" style="width: 3%">
+		<span>Toys</span>
   </div>
-  <div class="progress-bar progress-bar-default" style="width: 45%">
-    <span>Groceries</span>
+  <div class="progress-bar progress-bar-default" style="width: 40%">
+		<span>Groceries</span>
   </div>
+  
 </div>
 <!-- END github-style what percentages of types of transactions -->
 
@@ -109,39 +106,74 @@
   <strong>Nice!</strong> You've added a new line to your chkbk.
 </div>
 
+
 <form onsubmit="return false">
-    <button class="btn"><i class="fa fa-camera"></i></button>
-    <input type="number" v-model="chkbk_id" placeholder="Check #" class="form-control">
-    <input type="date" v-model="chkbk_date" class="form-control">
-    <input type="text" v-model="chkbk_note" placeholder="Note (Kroger,paycheck, etc)" class="form-control">
-    <label><input type="radio" value="0" v-model="chkbk_type" class="form-control" checked> <i class="fa fa-minus-circle fa-lg debit"></i></label> <label> <input type="radio" value="1" v-model="chkbk_type" class="form-control"> <i class="fa fa-plus-circle fa-lg deposit"></i></label> 
-    <input type="text" placeholder="Amount" v-model="chkbk_amount" class="form-control">
-    <button v-on="click: saveEntry" class="btn btn-success">Save</button>
+
+	<div class="row form-group">
+		<div class="col-xs-2 col-sm-2 col-md-2">
+			<button class="btn btn-primary"><i class="fa fa-camera"></i> <span class="hidden-xs hidden-sm">Receipt photo</span></button>
+		</div>
+		<div class="col-xs-3 col-sm-3 col-md-3">
+			<input type="text" v-model="chkbk_id" placeholder="Check #" class="form-control">
+		</div>
+		<div class="col-xs-3 col-sm-3 col-md-3">
+			<input type="text" v-model="chkbk_date" class="form-control" placeholder="01/01/2012">
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-3">
+			<select class="form-control">
+				<option>Category</option>
+				<option>something</option>
+				<option>else</option>
+			</select>
+		</div>
+	</div>
+
+
+	<div class="row form-group">
+		<div class="col-xs-5 col-sm-6 col-md-7">
+			<input type="text" v-model="chkbk_note" placeholder="Note (Kroger,paycheck, etc)" class="form-control">
+		</div>
+		<div class="col-xs-4 col-sm-4 col-md-3">
+			<input type="text" placeholder="$Amount" v-model="chkbk_amount" class="form-control">
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-2">
+			<input type="checkbox" id="toggle" value="1" v-model="chkbk_type" class="form-control">
+		</div>
+	</div>
+
+	<div class="row form-group">
+		<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-4">
+			<button v-on="click: saveEntry" class="btn btn-block btn-success btn-lg"><i class="fa fa-cloud-upload"></i> Save</button>
+		</div>
+	</div>
+		
 </form>
 
-<table id="chkbk-tbl" class="table table-hover table-bordered">
-    <thead>
-        <tr>
-            <th><i class="fa fa-camera"></i></th>
-            <th class="hidden-xs">Check #</th>
-            <th>Date</th>
-            <th>Note</th>
-            <th>Amount</th>
-            <th>Balance</th>
-        </tr>
-    </thead>
-    <tbody>
-        
-    <tr v-repeat="records" class="{{type == 1 ? 'deposit-row' : 'debit-row'}}">
-        <td>{{image ? 'img_link' : 'None'}}</td>
-        <td class="hidden-xs">{{check_id}}</td>
-        <td>{{date}}</td>
-        <td>{{note}}</td>
-        <td class="right">{{amount | makeFloat}}</td>
-        <td>{{balance | makeFloat}}</td>
-    </tr>
+<table id="chkbk-tbl" class="table table-hover table-bordered table-responsive">
+	<thead>
+		<tr>
+			<th class="text-center hidden-xs"><i class="fa fa-camera"></i></th>
+			<th class="hidden-xs">Cat</th>
+			<th class="hidden-xs">Check #</th>
+			<th>Date</th>
+			<th>Note</th>
+			<th>Amount</th>
+			<th>Balance</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+	<tr v-repeat="records" class="{{type == 1 ? 'deposit-row' : 'debit-row'}}">
+		<td class="text-center hidden-xs"><span class="img-link">{{image ? 'img_link' : 'None'}}</span></td>
+		<td class="hidden-xs"><span v-class="">{{category}}</span></td>
+		<td class="hidden-xs text-center">{{check_id}}</td>
+		<td>{{date}}</td>
+		<td>{{note}}</td>
+		<td class="text-right">{{amount | makeFloat}}</td>
+		<td class="text-right">{{balance | makeFloat}}</td>
+	</tr>
 
-    </tbody>
+	</tbody>
 
 </table>
 

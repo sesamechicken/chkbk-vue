@@ -15,10 +15,10 @@ var chkbk = new Vue({
     data: {
         msg: 'Hello, foo',
         records: [
-            { check_id: 123, image: '', date: '4/20/2014', note: 'Kroger', type: 0, amount: 124.22, balance: 435.87 },
-            { check_id: null, image: '', date: '4/22/2014', note: 'Shell', type: 0, amount: 20.00, balance: 415.87 },
-            { check_id: null, image: '', date: '4/20/2014', note: 'Water bill', type: 0, amount: 32.53, balance: 383.34 },
-            { check_id: null, image: '', date: '4/20/2014', note: 'Deposit', type: 1, amount: 100.00, balance: 483.34 }
+            { check_id: 123, image: '', category: 'groceries', date: '4/20/2014', note: 'Kroger', type: 0, amount: 124.22, balance: 435.87 },
+            { check_id: null, image: '', category: '', date: '4/22/2014', note: 'Shell', type: 0, amount: 20.00, balance: 415.87 },
+            { check_id: null, image: '', category: 'bills', date: '4/20/2014', note: 'Water bill', type: 0, amount: 32.53, balance: 383.34 },
+            { check_id: null, image: '', category: 'surprises', date: '4/20/2014', note: 'Deposit', type: 1, amount: 100.00, balance: 483.34 }
         ]
     },
     methods: {

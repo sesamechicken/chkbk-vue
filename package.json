@@ -1,0 +1,11 @@
+{
+  "name": "cm7-mobile-ui-test",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest"
+  }
+}
